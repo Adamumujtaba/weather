@@ -110,7 +110,7 @@ const AppCont = styled.div`
   width: 360px;
   border-radius: 10px;
   margin: 100px auto;
-  height: 55vh;
+  height: auto;
   padding: 20px;
   text-align: center;
   box-shadow: 1px 1px 2px 1px #cad5e2;
