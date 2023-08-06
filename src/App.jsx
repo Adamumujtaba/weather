@@ -17,7 +17,7 @@ function App() {
     setLoad(true);
     axios
       .get(
-        `http://api.weatherapi.com/v1/current.json?key=a9ef8b3ef503416c8eb02039230608&q=${city}&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=a9ef8b3ef503416c8eb02039230608&q=${city}&aqi=no`
       )
       .then((response) => {
         setData(response.data);
