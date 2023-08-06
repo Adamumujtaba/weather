@@ -16,6 +16,8 @@ function App() {
   console.log(error);
   function DataWeather() {
     setLoad(true);
+    setError("");
+    setData({});
     axios
       .get(
         `https://api.weatherapi.com/v1/current.json?key=a9ef8b3ef503416c8eb02039230608&q=${city}&aqi=no`,
@@ -38,7 +40,6 @@ function App() {
         console.log(error);
         setLoad(false);
         setError("No matching location found");
-
         // setError(error.data.error.message);
       });
   }
