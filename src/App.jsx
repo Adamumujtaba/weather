@@ -73,7 +73,7 @@ function App() {
               {current?.temp_c} <sup>O</sup>C{" "}
             </p>
 
-            <p className="city">{location?.name}</p>
+            <p className="city">{location?.region}</p>
 
             <div className="flex">
               <div className="flex">
