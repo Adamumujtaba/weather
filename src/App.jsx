@@ -10,9 +10,10 @@ import { BiLoaderCircle } from "react-icons/bi";
 function App() {
   const [data, setData] = useState({});
   const [city, setCity] = useState("");
+  const [error, setError] = useState();
   const [load, setLoad] = useState(false);
   const { current, location } = data;
-
+  console.log(error);
   function DataWeather() {
     setLoad(true);
     axios
@@ -29,10 +30,16 @@ function App() {
       .then((response) => {
         setData(response.data);
         setLoad(false);
+        if (response.status === 400) {
+          setError("No matching location found");
+        }
       })
       .catch((error) => {
         console.log(error);
         setLoad(false);
+        setError("No matching location found");
+
+        // setError(error.data.error.message);
       });
   }
   return (
@@ -66,14 +73,29 @@ function App() {
           >
             <p>Search any city by name</p>
           </div>
+        ) : error ? (
+          <div
+            style={{
+              margin: "140px auto",
+            }}
+          >
+            <p style={{ color: "#fff" }}>{error}</p>
+          </div>
         ) : (
           <div>
             <img src={Cloud} width={"50%"} />
             <p className="temp">
               {current?.temp_c} <sup>O</sup>C{" "}
             </p>
-
-            <p className="city">{location?.region}</p>
+            <p className="city">{city}</p>
+            <div className="flex">
+              <p className="region" style={{ float: "left" }}>
+                Country:{location?.country}
+              </p>
+              <p className="region" style={{ float: "right" }}>
+                {location.region && `Region:${location?.region} `}
+              </p>
+            </div>
 
             <div className="flex">
               <div className="flex">
