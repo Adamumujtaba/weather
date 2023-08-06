@@ -17,7 +17,14 @@ function App() {
     setLoad(true);
     axios
       .get(
-        `https://api.weatherapi.com/v1/current.json?key=a9ef8b3ef503416c8eb02039230608&q=${city}&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=a9ef8b3ef503416c8eb02039230608&q=${city}&aqi=no`,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Credentials": "true",
+          },
+        }
       )
       .then((response) => {
         setData(response.data);
