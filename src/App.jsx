@@ -62,24 +62,21 @@ function App() {
           <div
             style={{
               margin: "140px auto",
-            }}
-          >
+            }}>
             <BiLoaderCircle size={60} />
           </div>
         ) : !current ? (
           <div
             style={{
               margin: "140px auto",
-            }}
-          >
+            }}>
             <p>Search any city by name</p>
           </div>
         ) : error ? (
           <div
             style={{
               margin: "140px auto",
-            }}
-          >
+            }}>
             <p style={{ color: "#fff" }}>{error}</p>
           </div>
         ) : (
@@ -134,6 +131,7 @@ const AppCont = styled.div`
   border-radius: 10px;
   margin: 100px auto;
   height: auto;
+  min-height: 70vh;
   padding: 20px;
   text-align: center;
   box-shadow: 1px 1px 2px 1px #cad5e2;
