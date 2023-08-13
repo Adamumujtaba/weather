@@ -92,7 +92,7 @@ function App() {
             </div>
 
             <div className="flex">
-              <div className="flex">
+              <div className="">
                 <p className="region" style={{ float: "left" }}>
                   Country:{location?.country}
                 </p>
@@ -208,8 +208,7 @@ const AppCont = styled.div`
     width: 80%;
     .flex {
       flex-wrap: wrap;
-      font-size: 0.9rem;
-      font-size: medium;
+      font-size: 0.8rem;
     }
   }
 `;
