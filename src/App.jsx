@@ -80,22 +80,26 @@ function App() {
             <p style={{ color: "#fff" }}>{error}</p>
           </div>
         ) : (
-          <div>
-            <img src={Cloud} width={"50%"} />
-            <p className="temp">
-              {current?.temp_c} <sup>O</sup>C{" "}
-            </p>
-            <p className="city">{city}</p>
-            <div className="flex">
-              <p className="region" style={{ float: "left" }}>
-                Country:{location?.country}
+          <div className="content">
+            <div className="box">
+              <img src={Cloud} width={"50%"} />
+            </div>
+            <div className="box">
+              <p className="temp">
+                {current?.temp_c} <sup>O</sup>C{" "}
               </p>
-              <p className="region" style={{ float: "right" }}>
-                {location.region && `Region:${location?.region} `}
-              </p>
+              <p className="city">{city}</p>
             </div>
 
             <div className="flex">
+              <div className="flex">
+                <p className="region" style={{ float: "left" }}>
+                  Country:{location?.country}
+                </p>
+                <p className="region" style={{ float: "right" }}>
+                  {location.region && `Region:${location?.region} `}
+                </p>
+              </div>
               <div className="flex">
                 <div>
                   <MdWaves size={45} />
@@ -129,7 +133,7 @@ const AppCont = styled.div`
   background: #383cc1;
   width: 360px;
   border-radius: 10px;
-  margin: 100px auto;
+  margin: 20px auto;
   height: auto;
   min-height: 70vh;
   padding: 20px;
@@ -141,6 +145,14 @@ const AppCont = styled.div`
     align-items: center;
     justify-content: center;
   }
+  .content {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+  }
+
   input {
     padding: 10px;
     width: 160px;
@@ -197,6 +209,7 @@ const AppCont = styled.div`
     .flex {
       flex-wrap: wrap;
       font-size: 0.9rem;
+      font-size: medium;
     }
   }
 `;
